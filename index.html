@@ -6,7 +6,23 @@
     <title>Fun with api</title>
 </head>
 <body>
-    <h1>Take a class</h1>
+    <h1 id="acitvity"> </h1>
+    <h3>Learn from: <a id="explore_link" href="">Visit the place</a> </h3>
+
+    <script>
+        function doSomething(){
+            fetch("https://www.boredapi.com/api/activity")
+        .then(res=> res.json())
+        .then(data=>{
+            document.getElementById("acitvity").innerText=data.activity;
+        })
+        }
+        doSomething();
+        setInterval(() => {
+            doSomething();
+            
+        }, 10000);
+    </script>
     
 </body>
 </html>
